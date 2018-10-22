@@ -6,6 +6,7 @@
  * ************************************************************************/
 #include "des.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 
 #define LEN 100
@@ -22,6 +23,9 @@ int read(FILE *f)
 
 void main()
 {
+#ifdef WINDOWS
+	system("CHCP 65001");
+#endif
 	int i, mode;
 	char s1[LEN], s2[LEN];
 	FILE *f1, *f2, *f3;
@@ -84,4 +88,7 @@ void main()
 		fclose(f3);
 		printf("明文已放入Ans.txt中!\n");
 	}
+#ifdef WINDOWS
+	system("pause");
+#endif
 }

@@ -138,7 +138,7 @@ void desRound(int round)
 
 void last_inv_IP(int* A)
 {
-	int tmp[64];
+	int tmp[64], i;
 	for (i = 0; i < 32; i++)
 		tmp[i] = R[TR][i];
 	for (i = 0; i < 32; i++)
